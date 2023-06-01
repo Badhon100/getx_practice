@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_practice/counterController.dart';
 
 class CounterRSM extends StatelessWidget {
    CounterRSM({super.key});
@@ -16,11 +17,17 @@ class CounterRSM extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: (){
-                increment();
+                Get.find<CounterController>().increment();
               }, 
               child: const Text("Counter"),
             ),
-            Obx(() =>Text(count.toString())),
+            GetX<CounterController>(
+              init: CounterController(),
+              builder: (controller){
+                return Text(controller.count.toString());
+              }
+            )
+
           ],
         ),
       ),
