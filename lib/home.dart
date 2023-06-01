@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'counter_rsm.dart';
+
 class Home extends StatelessWidget {
   const Home({super.key});
 
@@ -81,6 +83,12 @@ class Home extends StatelessWidget {
           child: const Text("Go back"),
           onPressed: (){
             Get.back();
+          },
+        ),
+          ElevatedButton(
+          child: const Text("Counter"),
+          onPressed: (){
+            Get.to(CounterRSM());
           },
         ),
             ],
