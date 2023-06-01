@@ -59,6 +59,34 @@ class MyApp extends StatelessWidget {
                   );
                 }, 
                 child: const Text("Dialog")
+              ),
+              ElevatedButton(
+                onPressed: (){
+                  Get.bottomSheet(
+                    Wrap(
+                      children: [
+                        ListTile(
+                          leading: const Icon(Icons.wb_sunny_outlined),
+                          title: const Text("Light theme"),
+                          onTap: (){
+                            Get.changeTheme(ThemeData.light());
+                          },                          
+                        ),
+                        ListTile(
+                          leading: const Icon(Icons.wb_sunny),
+                          title: const Text("Dark theme"),
+                          onTap: (){
+                            Get.changeTheme(ThemeData.dark());
+                          },                          
+                        ),
+                      ],
+                    ),
+                    barrierColor: Colors.amber,
+                    isDismissible: true,
+                    enableDrag: false,
+                  );
+                }, 
+                child: const Text("Bottom Sheet")
               )
             ],
           ),
