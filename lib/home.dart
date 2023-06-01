@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_practice/studentView.dart';
 
 import 'counter_rsm.dart';
 
@@ -89,6 +90,12 @@ class Home extends StatelessWidget {
           child: const Text("Counter"),
           onPressed: (){
             Get.to(CounterRSM());
+          },
+        ),
+        ElevatedButton(
+          child: const Text("Student"),
+          onPressed: (){
+            Get.to(StudentView());
           },
         ),
             ],
